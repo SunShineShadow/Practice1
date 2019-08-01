@@ -1,0 +1,36 @@
+import java.util.Scanner;
+/**
+ * Created by hx on 2019/8/1
+ * 每人写一张有自己名字的条子放入抽奖箱
+ * 每人抽一张，如果抽到自己的名字则视为中奖
+ * 输入参加人数n 输出无人获奖的概率
+ */
+public class nooneWin {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        while (in.hasNext()) {
+            int n = in.nextInt();
+            if (n < 2 || n > 20) {
+                break;
+            }
+            double res = (divisor(n) / dividend(n)) * 100;
+            System.out.println(String.format("%.2f",res) + "%");
+        }
+    }
+    private static double divisor(int n) {
+        if (n == 1) {
+            return 0;
+        }
+        if (n == 2) {
+            return 1.00;
+        }
+        return (n - 1) * (divisor(n - 1) + divisor(n - 2));
+    }
+    private static double dividend(int n){
+        double total = 1;
+        for (int i = 1; i <= n; i++) {
+            total = total * i;
+        }
+        return total;
+    }
+}
