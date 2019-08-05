@@ -1,0 +1,22 @@
+import java.util.Scanner;
+/**
+ * Created by hx on 2019/8/5
+ * 输入一串英文单词 以空格隔开
+ * 以单词顺序反向输出，句末无空格
+ */
+public class reverseWord {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        while (in.hasNext()) {
+            String str = in.nextLine();
+            String[] strings = str.split(" ");
+            for (int i = strings.length - 1; i >= 0; i--) {
+                System.out.print(strings[i]);
+                if (i == 0) {
+                    break;
+                }
+                System.out.print(" ");
+            }
+        }
+    }
+}
