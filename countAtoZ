@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        while(in.hasNext()){
+            String str = in.nextLine();
+            int[] intArr = new int[26];
+            for(int i = 0;i<str.length();i++){
+                if(str.charAt(i)>=65 && str.charAt(i)<=90){
+                    intArr[(int)str.charAt(i)-65]++;
+                }
+            }
+            for(int i =0;i<intArr.length;i++){
+                System.out.print((char)(i+65)+":"+intArr[i]);
+                if(i == intArr.length){
+                    break;
+                }
+                System.out.println();
+            }
+        }
+    }
+}
