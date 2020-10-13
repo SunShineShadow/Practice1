@@ -4,7 +4,10 @@ public class Main{
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         while(in.hasNext()){
-            System.out.println((new BigInteger(in.next().substring(2),16)).toString());
+            if(in.next().length()>=2){
+                System.out.println((new BigInteger(in.next().substring(2),16)).toString());
+            }
         }
+        in.close();
     }
 }
